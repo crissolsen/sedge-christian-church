@@ -5,6 +5,8 @@ import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 import Podbean from '../components/Podbean.astro';
 import ContactForm from '../components/ContactForm.astro';
+import SmallFloatingMenu from '../components/SmallFloatingMenu.astro';
+import FindUs from '../components/FindUs.astro';
 
 import { SITE } from '../config';
 
@@ -15,8 +17,6 @@ let permalink = 'https://sedgechurch.co.za/';
 // Data Fetching: List all Markdown posts in the repo.
 let allPosts = await Astro.glob('./posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-let showPodbean = false
 
 ---
 
@@ -65,6 +65,7 @@ let showPodbean = false
 	</head>
 
 	<body>
+		<SmallFloatingMenu />
 		<BlogHeader />
 		<div class="wrapper">
 			<hr class="my-2"/>
@@ -79,7 +80,7 @@ let showPodbean = false
 				</section>
 			</main>
 			<ContactForm />
-
+			<FindUs />
 			<footer>
 			<a href="/admin" class="mt-10 block" >Admin🔐</a>
 			</footer>
