@@ -22,7 +22,8 @@ export default defineConfig({
       config: {
         backend: {
           name: 'git-gateway',
-          branch: 'main',
+          branch: 'latest',
+          repo: 'crissolsen/sedge-christian-church',
         },
         collections: [
           // Content collections
