@@ -10,6 +10,7 @@ export default defineConfig({
       // Use Netlify’s “Git Gateway” authentication and target our default branch
       backend: {
         name: 'git-gateway',
+        repo: 'crissolsen/sedge-christian-church',
         branch: 'latest'
       },
       // Configure where our media assets are stored & served from
