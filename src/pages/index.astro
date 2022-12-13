@@ -3,23 +3,21 @@
 import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
+import Podbean from '../components/Podbean.astro';
+import ContactForm from '../components/ContactForm.astro';
+
 import { SITE } from '../config';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let { title } = SITE;
 let description = 'Love God. Love People. Do Stuff.';
 let permalink = 'https://sedgechurch.co.za/';
 
 // Data Fetching: List all Markdown posts in the repo.
-
 let allPosts = await Astro.glob('./posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+let showPodbean = false
+
 ---
 
 <html lang="en">
@@ -69,13 +67,21 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 	<body>
 		<BlogHeader />
 		<div class="wrapper">
+			<hr class="my-2"/>
+			<div class="flex flex-col items-center">
+				<Podbean />
+				<a class="button" href="https://www.youtube.com/@SedgefieldChristianChurch/streams" target="_blank">View Livestreams</a>
+			</div>
+			<hr class="my-2"/>
 			<main class="content">
 				<section aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>
+			<ContactForm />
+
 			<footer>
-			<a href="/admin">Admin🔐</a>
+			<a href="/admin" class="mt-10 block" >Admin🔐</a>
 			</footer>
 		</div>
 	</body>

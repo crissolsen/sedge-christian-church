@@ -1,0 +1,38 @@
+<form name="contact" method="POST" data-netlify="true" id="contact-form" class="border border-gray-300 p-4 rounded w-full md:w-1/2 mx-auto">
+    <h2>Contact Form</h2>
+    <p>
+      <label>Your Name: <br> <input type="text" name="name" /></label>
+    </p>
+    <p>
+      <label>Your Email: <br> <input type="email" name="email" /></label>
+    </p>
+    <label>Your Contact Number: <br><input type="tel" name="contact-num" /></label>
+    <p>
+      <label>Message: <br><textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <button type="submit" class="button">Send</button>
+    </p>
+</form>
+
+<style>
+    #contact-form {
+        @apply flex flex-col gap-2 flex-wrap justify-center;
+    }
+
+    #contact-form p {
+        @apply w-full flex-grow flex flex-col;
+    }
+
+    #contact-form label {
+        @apply text-xl;
+    }
+
+    #contact-form input {
+        @apply outline w-full
+    }
+
+    #contact-form textarea {
+        @apply w-full outline my-2;
+    }
+</style>

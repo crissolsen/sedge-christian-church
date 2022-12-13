@@ -103,6 +103,11 @@ body {
 	line-height: 1.625;
 }
 
+.button {
+	@apply p-2 text-xl font-bold bg-gray-100 hover:bg-black text-center mx-auto w-full transition duration-500;
+	color: var(--color-red);
+}
+
 .wrapper {
 	margin-left: auto;
 	margin-right: auto;
