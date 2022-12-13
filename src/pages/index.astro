@@ -11,7 +11,7 @@ import { SITE } from '../config';
 // All variables are available to use in the HTML template below.
 let { title } = SITE;
 let description = 'Love God. Love People. Do Stuff.';
-let permalink = 'https://example.com/';
+let permalink = 'https://sedgechurch.co.za/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
@@ -70,10 +70,6 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 		<BlogHeader />
 		<div class="wrapper">
 			<main class="content">
-				<section class="intro">
-					<h1 class="latest">{title}</h1>
-					<p>{description}</p>
-				</section>
 				<section aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
