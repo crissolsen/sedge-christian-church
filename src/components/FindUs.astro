@@ -1,7 +1,12 @@
+---
+import FacebookEmbed from "./FacebookEmbed.astro";
+
+---
+
 <div class="flex flex-wrap lg:gap-8 my-4" id="find-us">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.2150061937687!2d22.797329615879764!3d-34.01269163397393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e78a2d4b81a820f%3A0x1e73ce413da2e123!2sSedgefield%20Christian%20Church!5e0!3m2!1sen!2sza!4v1670924883258!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="flex flex-col items-start gap-2 my-4">
-        <a href="https://www.facebook.com/sedgefieldcotn/" class="button text-left" target="_blank">Find us on Facebook</a>
+       <FacebookEmbed />
         <a href="https://wa.me/0817492534" class="button text-left" target="_blank">WhatsApp us</a>
         <address class="font-bold">
             Sedgefield Christian Church <br>
