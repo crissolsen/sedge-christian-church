@@ -1,5 +1,5 @@
 <!-- Want to have a navigate to us, contact us and announcements -->
-<nav class="fixed bottom-10 right-4 lg:top-10" id="small-menu">
+<nav class="fixed bottom-10 right-4 lg:top-10 z-10" id="small-menu">
     <ul>
         <a href="#contact-form"><li>Contact us</li></a>
         <a href="#find-us"><li>Find us</li></a>
@@ -9,8 +9,11 @@
 </nav>
 
 <style>
+    #small-menu {
+        z-index: 1000;
+    }
     #small-menu li {
-        @apply font-bold bg-gray-100 text-base my-2 p-2 hover:bg-white transition lg:text-2xl text-center;
+        @apply font-bold bg-gray-100 text-base my-2 p-2 hover:bg-white transition lg:text-2xl text-center ;
         animation: slide-in 2s forwards
     }
 
