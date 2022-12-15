@@ -214,6 +214,10 @@ strong {
 	color: inherit;
 }
 
+section {
+	@apply my-8 pb-6 border-b-8
+}
+
 /* Supporting Content */
 
 code {

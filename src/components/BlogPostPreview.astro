@@ -6,23 +6,20 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="post-preview">
-	<header>
-		<p class="publish-date">{post.frontmatter.publishDate}</p>
-		<a href={post.url}><h3>{post.frontmatter.title}</h3></a>
-	</header>
-	<p>{post.frontmatter.description}</p>
-	<p><slot /></p>
+<article class="py-4">
+	<p class="text-sm text-gray-400">{post.frontmatter.publishDate}</p>
+	<a href={post.url}><h3>{post.frontmatter.title}</h3></a>
+	<!-- <p>{post.frontmatter.description}</p> -->
+	<p>{post.rawContent}</p>
 	<a href={post.url}>Read more</a>
 </article>
 
 <style>
 	.content :global(main > * + *) {
-		margin-top: 1rem;
+		/* margin-top: 1rem; */
 	}
 
 	.post-preview {
-		padding-bottom: 2rem;
 		margin-bottom: 2rem;
 		border-bottom: 4px solid var(--theme-divider);
 	}
@@ -32,7 +29,6 @@ const { post } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding-bottom: 2rem;
 		text-align: left;
 	}
 
