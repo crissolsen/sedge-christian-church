@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Avenir';
-	src: url('assets/fonts/AvenirLTStd-Book');
+	src: url('../assets/fonts/AvenirLTStd-Book.woff');
 }
 
 :root {
@@ -106,7 +106,7 @@ body {
 }
 
 .button {
-	@apply p-2 text-xl font-bold bg-gray-100 hover:bg-black text-center mx-auto w-full transition duration-500;
+	@apply p-2 text-xl font-bold bg-gray-100 hover:bg-white text-center mx-auto w-full transition duration-500;
 	color: var(--color-red);
 }
 
@@ -144,10 +144,12 @@ h1 {
 }
 
 h2 {
+	@apply font-bold;
 	font-size: clamp(2.074rem, 1.707rem + 0.9175vw, 2.441rem);
 }
 
 h3 {
+	@apply font-bold;
 	font-size: clamp(1.728rem, 1.503rem + 0.5625vw, 1.953rem);
 }
 

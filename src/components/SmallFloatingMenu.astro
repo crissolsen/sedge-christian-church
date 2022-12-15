@@ -1,28 +1,22 @@
 <!-- Want to have a navigate to us, contact us and announcements -->
 <nav class="fixed bottom-10 right-4 lg:top-10" id="small-menu">
     <ul>
-        <a href="#contact-form" class="font-bold"><li>Contact us</li></a>
-        <a href="#find-us" class="font-bold"><li>Find us</li></a>
+        <a href="#contact-form"><li>Contact us</li></a>
+        <a href="#find-us"><li>Find us</li></a>
+        <a href="#giving"><li>Giving</li></a>
+        <a href="#announcements"><li>Announcements</li></a>
     </ul>
 </nav>
 
 <style>
     #small-menu li {
-        @apply bg-gray-200 font-bold text-base my-2 p-2 border-2 border-gray-600 lg:text-2xl;
+        @apply font-bold bg-gray-100 text-base my-2 p-2 hover:bg-white transition lg:text-2xl text-center;
         animation: slide-in 2s forwards
     }
 
     @keyframes slide-in {
         0% {
             transform: translateX(300px)
-        }
-
-        50% {
-            @apply bg-red-300;
-        }
-
-        90% {
-            @apply bg-red-500;
         }
     }
 </style>

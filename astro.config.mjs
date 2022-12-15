@@ -35,16 +35,6 @@ export default defineConfig({
           time_format: false,
           label: 'Publish Date'
         }, {
-          name: 'author',
-          widget: 'string',
-          label: 'Author Name',
-          required: false
-        }, {
-          name: 'authorURL',
-          widget: 'string',
-          label: 'Author URL',
-          required: false
-        }, {
           name: 'description',
           widget: 'string',
           label: 'Description',
@@ -52,7 +42,8 @@ export default defineConfig({
         }, {
           name: 'body',
           widget: 'markdown',
-          label: 'Post Body'
+          label: 'Post Body',
+          required: true
         }, {
           name: 'layout',
           widget: 'select',

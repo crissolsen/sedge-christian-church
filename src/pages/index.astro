@@ -7,6 +7,7 @@ import Podbean from '../components/Podbean.astro';
 import ContactForm from '../components/ContactForm.astro';
 import SmallFloatingMenu from '../components/SmallFloatingMenu.astro';
 import FindUs from '../components/FindUs.astro';
+import Giving from '../components/Giving.astro';
 
 import { SITE } from '../config';
 
@@ -74,9 +75,20 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 				<a class="button" href="https://www.youtube.com/@SedgefieldChristianChurch/streams" target="_blank">View Livestreams</a>
 			</div>
 			<hr class="my-2"/>
+			<div class="pt-4 pb-6">
+				<h2>Ministries</h2>
+				<div>Sunday Service - Sunday 9:00</div>
+				<div>Youth - Saturday 18:00</div>
+			</div>
+			<hr/>
 			<main class="content">
-				<section aria-label="Blog post list">
+				<section aria-label="Blog post list" id="announcements">
+					<h2>Announcements</h2>
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
+				</section>
+
+				<section>
+					<Giving />
 				</section>
 			</main>
 			<ContactForm />
