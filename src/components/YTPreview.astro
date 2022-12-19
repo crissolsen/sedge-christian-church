@@ -1,0 +1,22 @@
+---
+export interface Props {
+    post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="py-4">
+    <p class="text-right text-gray-600 text-lg font-bold">{post.frontmatter.publishDate}</p>
+    <iframe
+        class="w-full mx-auto"
+        height="315"
+        src={post.frontmatter.ytUrl}
+        title="Latest Livestream"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+</article>
+
+<style>
+    
+</style>

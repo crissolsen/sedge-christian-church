@@ -33,7 +33,7 @@ export default defineConfig({
           format: 'DD MMM YYYY',
           date_format: 'DD MMM YYYY',
           time_format: false,
-          label: 'Publish Date'
+          label: 'Stream Date'
         }, {
           name: 'description',
           widget: 'string',
@@ -53,7 +53,40 @@ export default defineConfig({
             value: '../../layouts/BlogPost.astro'
           }]
         }]
-      }]
+      }, 
+    {
+      name: 'media',
+        label: 'Media Posts',
+        label_singular: 'Media Post',
+        folder: 'src/pages/media',
+        create: true,
+        delete: true,
+        fields: [{
+          name: 'title',
+          widget: 'string',
+          label: 'Post Title'
+        }, {
+          name: 'publishDate',
+          widget: 'datetime',
+          format: 'DD MMM YYYY',
+          date_format: 'DD MMM YYYY',
+          time_format: false,
+          label: 'Publish Date'
+        }, {
+          name: 'ytUrl',
+          widget: 'string',
+          label: 'Youtube Url',
+          required: true
+        }, {
+          name: 'layout',
+          widget: 'select',
+          default: '../../layouts/MediaPost.astro',
+          options: [{
+            label: 'Media Post',
+            value: '../../layouts/MediaPost.astro'
+          }]
+        }]
+      }], 
     },
     previewStyles: ['src/styles/blog.css']
   }), tailwind()]

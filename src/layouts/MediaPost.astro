@@ -1,0 +1,27 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const { content } = Astro.props;
+const { title, url, publishDate } = content;
+---
+
+<html lang={content.lang || "en"}>
+	<head>
+		<BaseHead {title} />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<BlogPost {title} {publishDate}>
+				<iframe
+					width="560"
+					height="315"
+					src={url}
+					title="Latest Livestream"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</BlogPost>
+		</div>
+	</body>
+</html>

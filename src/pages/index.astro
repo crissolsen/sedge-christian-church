@@ -8,8 +8,10 @@ import ContactForm from '../components/ContactForm.astro';
 import SmallFloatingMenu from '../components/SmallFloatingMenu.astro';
 import FindUs from '../components/FindUs.astro';
 import Giving from '../components/Giving.astro';
+import YTEmbed from '../components/YTEmbed.astro';
 
 import { SITE } from '../config';
+import YTPreview from '../components/YTPreview.astro';
 
 let { title } = SITE;
 let description = 'Love God. Love People. Do Stuff.';
@@ -18,6 +20,9 @@ let permalink = 'https://sedgechurch.co.za/';
 // Data Fetching: List all Markdown posts in the repo.
 let allPosts = await Astro.glob('./posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+
+let mediaPosts = await Astro.glob('./media/*.md')
+mediaPosts = mediaPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
 ---
 
@@ -69,10 +74,21 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 		<SmallFloatingMenu />
 		<BlogHeader />
 		<div class="wrapper">
-			<div class="flex flex-col items-center">
+			<section class="flex flex-col items-center">
+				<h2 class="self-start">Livestreams</h2>
+				<div>
+					<div>Latest Livestream</div>
+					<YTPreview post={mediaPosts[0]}/>
+					<div>Past Livestreams</div>
+					<div class="flex flex-wrap justify-evenly gap-2">
+						<YTPreview post={mediaPosts[1]} />
+						<YTPreview post={mediaPosts[2]} />
+						<YTPreview post={mediaPosts[3]} />
+					</div>
+				</div>
 				<Podbean />
-				<a class="button" href="https://www.youtube.com/@SedgefieldChristianChurch/streams" target="_blank">View Livestreams</a>
-			</div>
+				</section>
+
 			<section class="pt-4 pb-6">
 				<h2>Ministries</h2>
 				<div>Sunday Service - Sunday 9:00</div>

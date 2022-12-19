@@ -5,11 +5,13 @@ specifiers:
   astro: 1.5.2
   astro-netlify-cms: ^0.3.1
   tailwindcss: ^3.0.24
+  usetube: ^2.2.2
 
 dependencies:
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
   astro-netlify-cms: 0.3.1_astro@1.5.2
   tailwindcss: 3.2.4
+  usetube: 2.2.2
 
 devDependencies:
   astro: 1.5.2
@@ -1390,6 +1392,14 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /babel-plugin-emotion/10.2.2:
     resolution: {integrity: sha512-SMSkGoqTbTyUTDeuVuPIWifPdUGkTk1Kf9BWRiXIOIcuyMfsdp2EjeiiFvOzX8NOBvEh/ypKYvUh2rkgAJMCLA==}
     dependencies:
@@ -2665,6 +2675,16 @@ packages:
 
   /focus-group/0.3.1:
     resolution: {integrity: sha512-IA01dzk2cStQso/qnt2rWhXCFBZlBfjZmohB9mXUx9feEaJcORAK0FQGvwaApsNNGwzEnqrp/2qTR4lq8PXfnQ==}
+    dev: false
+
+  /follow-redirects/1.15.2:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /formdata-polyfill/4.0.10:
@@ -7439,6 +7459,14 @@ packages:
       '@types/react': 17.0.50
       react: 17.0.2
       use-isomorphic-layout-effect: 1.1.2_pxzommwrsowkd4kgag6q3sluym
+    dev: false
+
+  /usetube/2.2.2:
+    resolution: {integrity: sha512-hS4GuR8Un7ARwMht5cjNqgp/g3qOzJCYZHSyS5aXM9b/BNJd4lnOVBrjFdHSX6mZOqUCK6FNylKcbcP3mIvOog==}
+    dependencies:
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /utf8-byte-length/1.0.4:
