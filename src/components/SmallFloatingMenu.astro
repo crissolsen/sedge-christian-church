@@ -15,6 +15,18 @@
     <a href="#">🔼 Top</a>
 </nav>
 
+<script>
+  // Hide the navbar when user clicks a link. Done by making checkbox checked whenever an a tag is clicked.
+  const links = document.querySelectorAll('a')
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      // document.querySelector("#menu").style.display='none'
+      document.querySelector("#menu-toggle").checked = false
+    })
+  })
+</script>
+
 <style>
 #menu {
   visibility: hidden;
