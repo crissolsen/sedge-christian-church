@@ -1,70 +1,74 @@
-<!-- Want to have a navigate to us, contact us and announcements -->
-<input type="checkbox" id="menu-toggle" hidden/>
-<label for="menu-toggle" class="text-3xl cursor-pointer fixed top-4 left-4 z-10 md:hidden">
-  <svg width="60" height="60">
-    <rect x="25" y="5" width="30" height="5" rx="5" />
-    <rect x="25" y="15" width="30" height="5" rx="5" />
-    <rect x="25" y="25" width="30" height="5" rx="5" />
+<input type="checkbox" id="menu-toggle" hidden />
+<label
+  for="menu-toggle"
+  class="text-3xl cursor-pointer fixed top-4 right-4 z-10 md:hidden"
+>
+  <svg width="40" height="35" class="bg-red-700">
+    <rect x="5" y="5" width="30" height="5"></rect>
+    <rect x="5" y="15" width="30" height="5"></rect>
+    <rect x="5" y="25" width="30" height="5"></rect>
   </svg>
 </label>
-<nav id="menu" class="w-full flex flex-col md:flex-row justify-start flex-wrap gap-4 md:gap-10 top-5 fixed left-36">
-    <a href="#contact-form">Contact us</a>
-    <a href="#find-us">Find us</a>
-    <a href="#giving">Giving</a>
-    <a href="#announcements">Announcements</a>
-    <a href="#">🔼 Top</a>
+<nav
+  id="menu"
+  class="w-full flex flex-col md:flex-row justify-start flex-wrap gap-1 md:gap-5 top-20 md:top-2 fixed md:left-[50%]"
+>
+  <a href="#contact-form">Contact us</a>
+  <a href="#find-us">Find us</a>
+  <a href="#giving">Giving</a>
+  <a href="#announcements">Announcements</a>
+  <a href="#" class="text-sm">🔼</a>
 </nav>
 
 <script>
   // Hide the navbar when user clicks a link. Done by making checkbox checked whenever an a tag is clicked.
-  const links = document.querySelectorAll('a')
-  const menu = document.querySelector("#menu-toggle")
+  const links = document.querySelectorAll("a");
+  const menu = document.querySelector("#menu-toggle");
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth > 500) return
-      menu.checked = false
-    })
-  })
+  links.forEach((link) => {
+    link.addEventListener("click", async () => {
+      if (window.innerWidth > 500) return;
+      menu.checked = await false;
+    });
+  });
 
   if (window.innerWidth > 500) {
-    menu.checked = true
+    menu.checked = true;
   }
+
 </script>
 
 <style>
-#menu {
-  @apply hidden;
-  transition: all 1s;
-  animation: fade-out 0.4s forwards;
-}
+  #menu {
+    @apply hidden;
+    transition: all 1s;
+    animation: fade-out 0.4s forwards;
+  }
 
-#menu-toggle:checked ~ #menu {
+  #menu-toggle:checked ~ #menu {
     @apply flex visible;
-    animation: fade-in 0.4s forwards
-}
-
-
-#menu:focus ~ #menu-toggle:checked {
-  @apply hidden;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-200px)
+    animation: fade-in 0.4s forwards;
   }
-}
 
-@keyframes fade-out {
-  100% {
-    opacity: 0;
-    transform: translateX(200px)
+  #menu:focus ~ #menu-toggle:checked {
+    @apply hidden;
   }
-}
 
-#menu a {
-  @apply p-2 bg-gray-200 font-bold text-lg hover:bg-white transition;
-}
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+  }
 
+  @keyframes fade-out {
+    100% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+  }
+
+  #menu a {
+    @apply p-2 bg-gray-200 font-bold text-lg hover:bg-white transition border border-black;
+  }
 </style>
