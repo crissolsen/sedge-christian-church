@@ -1,6 +1,6 @@
 <!-- Want to have a navigate to us, contact us and announcements -->
 <input type="checkbox" id="menu-toggle" hidden/>
-<label for="menu-toggle" class="text-3xl cursor-pointer fixed top-4 left-4 z-10">
+<label for="menu-toggle" class="text-3xl cursor-pointer fixed top-4 left-4 z-10 md:hidden">
   <svg width="60" height="60">
     <rect x="25" y="5" width="30" height="5" rx="5" />
     <rect x="25" y="15" width="30" height="5" rx="5" />
@@ -18,18 +18,23 @@
 <script>
   // Hide the navbar when user clicks a link. Done by making checkbox checked whenever an a tag is clicked.
   const links = document.querySelectorAll('a')
+  const menu = document.querySelector("#menu-toggle")
 
   links.forEach(link => {
     link.addEventListener('click', () => {
-      // document.querySelector("#menu").style.display='none'
-      document.querySelector("#menu-toggle").checked = false
+      if (window.innerWidth > 500) return
+      menu.checked = false
     })
   })
+
+  if (window.innerWidth > 500) {
+    menu.checked = true
+  }
 </script>
 
 <style>
 #menu {
-  @apply hidden md:flex md:visible;
+  @apply hidden;
   transition: all 1s;
   animation: fade-out 0.4s forwards;
 }
@@ -41,7 +46,7 @@
 
 
 #menu:focus ~ #menu-toggle:checked {
-  @apply hidden md:flex md:visible;
+  @apply hidden;
 }
 
 @keyframes fade-in {
