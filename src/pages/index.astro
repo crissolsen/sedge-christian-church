@@ -77,7 +77,8 @@ mediaPosts = mediaPosts.sort((a, b) => new Date(b.frontmatter.publishDate).value
 		<BlogHeader />
 		<div class="wrapper">
 			<section class="flex flex-col items-center">
-				<h2 class="self-start">Livestreams</h2>
+				<ContactForm />
+				<!-- <h2 class="self-start">Livestreams</h2>
 				<div>
 					<div>Latest Livestream</div>
 					<YTPreview post={mediaPosts[0]}/>
@@ -87,7 +88,7 @@ mediaPosts = mediaPosts.sort((a, b) => new Date(b.frontmatter.publishDate).value
 						<YTPreview post={mediaPosts[2]} />
 						<YTPreview post={mediaPosts[3]} />
 					</div>
-				</div>
+				</div> -->
 				<Podbean />
 				</section>
 
@@ -97,16 +98,15 @@ mediaPosts = mediaPosts.sort((a, b) => new Date(b.frontmatter.publishDate).value
 				<div>Youth - Saturday 18:00</div>
 			</section>
 			<main >
-				<section aria-label="Blog post list" id="announcements">
+				<!-- <section aria-label="Blog post list" id="announcements">
 					<h2 class="my-4">Announcements</h2>
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
-				</section>
+				</section> -->
 
 				<section class="my-4">
 					<Giving />
 				</section>
 			</main>
-			<ContactForm />
 			<FindUs />
 			<footer class="mt-48">
 			<a href="/admin" class="mt-10 block" >Admin🔐</a>
