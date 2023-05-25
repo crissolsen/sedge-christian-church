@@ -9,6 +9,7 @@ import SmallFloatingMenu from '../components/SmallFloatingMenu.astro';
 import FindUs from '../components/FindUs.astro';
 import Giving from '../components/Giving.astro';
 import YTEmbed from '../components/YTEmbed.astro';
+import ImageCarousel from '../components/ImageCarousel.astro';
 
 import { SITE } from '../config';
 import YTPreview from '../components/YTPreview.astro';
@@ -71,13 +72,12 @@ mediaPosts = mediaPosts.sort((a, b) => new Date(b.frontmatter.publishDate).value
 	</head>
 
 	<body>
-
-			<SmallFloatingMenu />
-
+		<SmallFloatingMenu />
 		<BlogHeader />
 		<div class="wrapper">
 			<section class="flex flex-col items-center">
-				<ContactForm />
+				<ImageCarousel />
+				<!-- <ContactForm /> -->
 				<!-- <h2 class="self-start">Livestreams</h2>
 				<div>
 					<div>Latest Livestream</div>
